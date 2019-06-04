@@ -2,6 +2,35 @@
 # scriptable and usable for event-system below.
 ##################################################################################################
 
+native_assimilation_act_policy = {
+	badboy = 0.01
+	icon = 18
+}
+
+native_removal_act_policy = {
+	badboy = 0.02
+	icon = 18
+}
+
+#local_trinket_health_care = {
+#	#population_growth = 0.002
+#	icon = 19
+#}
+
+##Disasters
+earthquake_devastation = {
+	local_artisan_output = -0.5
+	local_artisan_input = -0.5
+	local_factory_output = -1
+	local_factory_input = -1
+	local_RGO_output = -0.5
+	life_rating = -0.25
+	immigrant_attract = -0.25
+	immigrant_push = 0.25
+	pop_militancy_modifier = 0.03
+	icon = 18
+}
+
 #MM Modifiers
 amir_kabir = {
 	research_points_modifier = 0.2
@@ -19,6 +48,14 @@ racial_tensions = {
 
 
 ###HPM Modifiers
+armenian_diaspora = {
+	icon = 20
+}
+
+tanzimat_land_reform = {
+	farm_rgo_eff = 0.05
+	icon = 1
+}
 
 war_economy_ships = {
 	local_ship_build = -0.75
@@ -51,7 +88,7 @@ plantation = {
 
 haussmanns_renovations = {
 	farm_rgo_size = 1
-	immigrant_attract = 0.1
+	immigrant_attract = 0.25
 	icon = 19
 }
 
@@ -219,9 +256,8 @@ population_resettlement = {
 	icon = 19
 }
 
-trade_city = {
-	farm_rgo_eff = 0.25
-	goods_demand = -0.25
+pearl_season = {
+	mine_rgo_eff = -0.33
 	icon = 11
 }
 
@@ -232,17 +268,6 @@ peacetime_mobilization = {
 	war_exhaustion = 0.05
 	prestige = -0.05
 	icon = 6
-}
-
-islamic_law = {
-	core_pop_consciousness_modifier = -0.25
-	research_points_modifier = -0.05
-	education_efficiency_modifier = -0.15
-	literacy_con_impact = -0.5
-	issue_change_speed = -0.5
-	suppression_points_modifier = 0.5
-	tax_efficiency = 0.05
-	icon = 5
 }
 
 treaty_port = {
@@ -326,8 +351,6 @@ withdrew_from_geneva_convention = {
 
 genocide = {
 	immigrant_attract = -1 
-	immigrant_push = 0.5
-	life_rating = -0.25
 	icon = 20
 }
 
@@ -475,6 +498,7 @@ bad_badboy = {
 
 the_big_ben = {
 	local_factory_output = 0.01
+	immigrant_attract = 0.25
 	icon = 5
 }
 
@@ -686,6 +710,7 @@ uncivilized_isolationism = {
 	global_pop_consciousness_modifier = -0.1
 	global_pop_militancy_modifier = -0.1
 	research_points_modifier = -0.3
+	min_tariff = 1.2
 	prestige = -0.01
 	icon = 10
 }
@@ -1025,12 +1050,12 @@ wish_I_was_dixie = {
 }
 
 southern_manorialism = {
-	pop_consciousness_modifier = 0.01
+	pop_consciousness_modifier = -0.01
 	icon = 15
 }
 
 southern_pride = {
-	pop_consciousness_modifier = 0.01
+	pop_consciousness_modifier = -0.01
 	icon = 15
 }
 
@@ -1670,6 +1695,14 @@ irish_unionists = {
 
 ### Arabia ###
 
+rally_tribesmen = {
+	mobilisation_size = 0.76
+	mobilisation_economy_impact = -0.7
+	core_pop_militancy_modifier = -0.1
+	war_exhaustion = -0.03
+	icon = 17
+}
+
 the_ikhwan = {
 	mobilisation_size = 0.35
 	mobilisation_economy_impact = -0.25
@@ -1687,6 +1720,15 @@ holy_city = {
 }
 
 ### China ###
+boxer_rebellion = {
+	pop_militancy_modifier = 0.1
+	local_rgo_output = -0.25
+	immigrant_attract = -0.25
+	immigrant_push = 0.75
+	population_growth = -0.002
+	icon = 4
+}
+
 boxer_presence = {
 	pop_militancy_modifier = -0.2
 	local_RGO_throughput = -0.25
@@ -1775,7 +1817,6 @@ sakoku = {
 	prestige = 0.01
 	global_pop_militancy_modifier = -0.05
 	war_exhaustion = -0.1
-	goods_demand = -0.1
 	icon = 5
 }
 
@@ -1783,7 +1824,6 @@ rangaku = {
 	prestige = 0.11
 	research_points_modifier = 0.1
 	global_pop_militancy_modifier = -0.05
-	goods_demand = -0.1
 	icon = 5
 }
 
@@ -1955,13 +1995,17 @@ treaties_of_velasco = {
 }
 
 ### Ottomanism
+religious_minority_oppression = {
+	icon = 18
+}
+
 ottoman_oppression = {
 	mobilisation_size = -0.02
 	land_organisation = -0.05
 	global_assimilation_rate = -0.2
 	tax_efficiency = 0.05
-	non_accepted_pop_militancy_modifier = 0.05
-	non_accepted_pop_consciousness_modifier = 0.1
+	#non_accepted_pop_militancy_modifier = 0.05
+	#non_accepted_pop_consciousness_modifier = 0.1
 	icon = 5
 }
 

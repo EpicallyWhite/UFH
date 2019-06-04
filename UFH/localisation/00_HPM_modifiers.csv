@@ -1,4 +1,61 @@
 ;;;;;;;;;;;;;;;;;;;;x,,,,,
+great_irish_famine;Great Irish Famine;;;;;;;;;;;;;;;;;;;;x,,,,,
+preparations_to_kill;Extermination Camps;;;;;;;;;;;;;;;;;;;;x,,,,,
+sunni_country;Sunni Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+shiite_country;Shiite Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+ibadi_country;Ibadi Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+catholic_country;Catholic Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+protestant_country;Protestant Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+mormon_country;Mormon Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+orthodox_country;Orthodox Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+coptic_country;Coptic Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+jewish_country;Jewish Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+yazidi_country;Yazidi Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+mahayana_country;Mahayana Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+gelugpa_country;Gelugpa Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+theravada_country;Theravada Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+hindu_country;Hindu Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+shinto_country;Shinto Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+sikh_country;Sikh Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+animist_country;Animist Religion;;;;;;;;;;;;;;;;;;;;x,,,,,
+native_assimilation_act_policy;Native Assimilation Act;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+native_assimilation_act_policy_desc;The government is working towards the assimilation of the native population.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+native_removal_act_policy;Native Removal Act;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+native_removal_act_policy_desc;Discriminatory policies aim to eliminate and push out the native population.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+african_integration_policy;African Integration Policy;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+native_assimilation_enacted;Native Integration Policy;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+new_world_nation;New World Nation;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+low_healthcare_poorly_funded;Poorly Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+desc_low_healthcare_poorly_funded;Less government investment in administration results in a poorly funded healthcare system.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+good_healthcare_poorly_funded;Poorly Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+desc_good_healthcare_poorly_funded;Less government investment in administration results in a poorly funded healthcare system.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+capital_health_care;Local Capital Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+local_trinket_health_care;Trinket Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+local_low_health_care;Low Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+local_acceptable_health_care;Acceptable Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+local_good_health_care;Good Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+pearl_season;Pearl Hunting Season;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+pearl_season_desc;The population in this province is engaging in the much profitable pearl hunting activity.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+religious_minority_oppression;Oppressed Religious Minorities;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+religious_minority_oppression_desc;Religious minorities are being mistreated, resulting in ever increasing militancy and consciousness of these people.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+armenian_diaspora;Armenian Diaspora;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+armenian_diaspora_desc;This province contains a minority population that comes from the Armenian diaspora.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+earthquake_devastation;Earthquake Devastation;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+earthquake_devastation_desc;A powerful earthquake has recently devastated this province, leaving thousands homeless and disrupting the lives of scores of people.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+education_fully_funded;Excellent Education System;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+health_care_fully_funded;Excellent Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+neglected_education;Neglected Education Funding;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+trinket_health_care_fully_funded;Fully Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+low_health_care_fully_funded;Fully Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+acceptable_health_care_fully_funded;Fully Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+good_health_care_fully_funded;Fully Funded Healthcare;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+low_schools_fully_funded;Fully Funded Education;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+acceptable_schools_fully_funded;Fully Funded Education;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+good_schools_fully_funded;Fully Funded Education;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+rally_tribesmen;Rally Tribesmen;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+rally_tribesmen_desc;A portion of our people leave a nomadic lifestyle with bits of a centuries old warrior culture. By reaching to these people and rallying them to our cause, we can raise a much greater army to fulfill our country's destiny.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tanzimat_land_reform;Ottoman Land Code;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+tanzimat_land_reform_desc;The Ottoman Land Code was the beginning of a systematic land reform program during the Tanzimat period of the Ottoman Empire. The reasons behind the law were twofold. (1) to increase tax revenue, and (2) to exercise greater state control over the area.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 war_economy_ships;Emergency Ship Building;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 preparing_for_war;Preparing for War;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 preparing_for_war_desc;War with the North is inevitable and we must be ready for it.;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
@@ -143,7 +200,7 @@ reconstruction_desc;After the Civil War, our torn nation needs to be rebuilt. Wi
 cultural_resurgence;Cultural Resurgence;;;;;;;;;;;;;;;;;;;;;;;x
 cultural_resurgence_desc;This province is experiencing a complete resurgence of an old culture.;;;;;;;;;;;;;;;;;;;;;;;x
 chinese_treaty_port;Chinese Treaty Port;;;;;;;;;;;;;;;;;;;;;;;x
-chinese_treaty_port_desc;We negotiated a treaty with the chinese and acquired the rights over a chinese port and city.;;;;;;;;;;;;;;;;;;;;;;;x
+chinese_treaty_port_desc;We negotiated a treaty with the Chinese and acquired the rights over a Chinese port and city.;;;;;;;;;;;;;;;;;;;;;;;x
 negotiating_unequal_treaty;Unequal Treaty;;;;;;;;;;;;;;;;;;;;;;;x
 negotiating_unequal_treaty_desc;We have lost a war and like vultures, the westerners descended upon us imposing their conditions including the opening of our country, monetary reparations and even the secession of territory.;;;;;;;;;;;;;;;;;;;;;;;x
 negotiating_treaty;Negotiating Treaty;;;;;;;;;;;;;;;;;;;;;;;x
@@ -198,8 +255,8 @@ tribute_received;Tribute Received;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 tribute_received_desc;One of our vassals paid their due tribute to us.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 tribute_paid;Tribute Paid;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 tribute_paid_desc;We have to share part of our earnings with our overlord over the time period and as suck we are poorer from that.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
-islamic_law;Islamic Law;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
-islamic_law_desc;Islamic law is now the basis law code of our society. It deals with several topics including: crime, politics, and economics, as well as personal matters such as sexual intercourse, hygiene, diet, prayer, everyday etiquette and fasting.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+islamic_law_triggered;Islamic Law;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+islamic_law_triggered_desc;Islamic law is now the basis law code of our society. It deals with several topics including: crime, politics, and economics, as well as personal matters such as sexual intercourse, hygiene, diet, prayer, everyday etiquette and fasting.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 deportation_underway;Deportation;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 deportation_underway_desc;People from different ethnicities are being "encouraged" to move out of this country.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 treaty_port;Treaty Port;;;;;;;;;;;;;;;;;;;;;;;;x;;;;

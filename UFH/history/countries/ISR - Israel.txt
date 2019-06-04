@@ -34,6 +34,8 @@ penal_system = capital_punishment
 child_labor = child_labor_legalcitizens_rights = primary_culture_only
 border_policy = open_borders
 
+set_country_flag = jewish_country
+
 ruling_party = ISR_liberal
 upper_house = {
 	fascist = 0
@@ -189,7 +191,7 @@ precision_work = yes
 	combat_medicine = yes
 	vaccination = yes
 	chemotherapy = yes
-	genetics:_heredity = yes
+	genetics_heredity = yes
 	gyrostabilized_fire_control = yes
 	optical_rangefinders = yes
 	prophylaxis_against_malaria = yes

@@ -199,11 +199,14 @@ political_decisions = {
 		picture = old_vilnius
 		potential = {
 			UBD = { exists = yes }
+			NOT = { tag = RUS }
 			OR = {
 				tag = UBD
 				is_our_vassal = UBD
 			}
-			UBD = { NOT = { any_owned_province = { is_core = LIT } } }
+			#UBD = { NOT = { any_owned_province = { is_core = LIT } } }
+			UBD = { is_substate = no }
+			NOT = { has_global_flag = lithuania_in_the_UBD }
 		}
 		
 		allow = {
@@ -231,8 +234,9 @@ political_decisions = {
 			prestige = 5
 			badboy = 1
 			
+			set_global_flag = lithuania_in_the_UBD
+			
 			UBD = {
-				set_country_flag = lithuania_in_the_UBD
 				add_accepted_culture = lithuanian
 			}
 			

@@ -149,6 +149,7 @@ political_decisions = {
 			set_global_flag = indonesia_formed
 			clr_country_flag = post_colonial_country
 			prestige = 20
+			INO = { tech_school = traditional_academic }
 			all_core = {
 				remove_core = THIS
 				add_core = INO
@@ -342,33 +343,54 @@ political_decisions = {
 		picture = map_east_indies
 		potential = {
 			OR = {
-				any_owned_province = { culture = malay }
-				JOH = { in_sphere = THIS }
-				JOH = { vassal_of = THIS }
-				PHG = { in_sphere = THIS }
-				PHG = { vassal_of = THIS }
-				PRK = { in_sphere = THIS }
-				PRK = { vassal_of = THIS }
-				SLG = { in_sphere = THIS }
-				SLG = { vassal_of = THIS }
+				any_owned_province = {
+					OR = {
+						is_core = JOH
+						is_core = PHG
+						is_core = PRK
+						is_core = SLG
+					}
+				}
+				JOH = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				PHG = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				PRK = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				SLG = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
 			}
 			NOT = {
 				primary_culture = malay
 				has_global_flag = malaya_formed
 				exists = MLY
 			}
-			JOH = {
-				OR = {
-					ai = yes
-					exists = no
-				}
-			}
 		}
 
 		allow = {
 			war = no
 			is_greater_power = yes
-			mass_politics = 1
+			revolution_n_counterrevolution = 1
 			JOH = {
 				all_core = {
 					OR = {
@@ -542,10 +564,21 @@ political_decisions = {
 				limit = { has_pop_culture = malay }
 				militancy = -6
 			}
-			MLY = { civilized = yes }
+			MLY = { tech_school = unciv_tech_school }
 			any_owned = {
 				limit = { is_core = MLY NOT = { province_id = 1393 } }
-				remove_core = SWK remove_core = SUL remove_core = BRU remove_core = KTI remove_core = KLM remove_core = LAN
+				remove_core = SWK
+				remove_core = SUL
+				remove_core = BRU
+				remove_core = KTI
+				remove_core = KLM
+				remove_core = LAN
+				remove_core = SAK
+				remove_core = ATJ
+				remove_core = DJA
+				remove_core = PHG
+				remove_core = PRK
+				remove_core = SLG
 			}
 			random_owned = { limit = { province_id = 2576 } add_core = MLY }
 		}
@@ -584,6 +617,7 @@ political_decisions = {
 			set_global_flag = sarawak_protectorate
 			SWK = { civilized = no }
 			SWK = { annex_to = ENG }
+			SWK = { tech_school = unciv_tech_school }
 		}
 
 		ai_will_do = {
@@ -668,6 +702,7 @@ political_decisions = {
 	sulu_protectorate = {
 		picture = map_east_indies
 		potential = {
+			NOT = { has_country_flag = the_sulu_protectorate }
 			OR = {
 				is_greater_power = yes
 				is_secondary_power = yes
@@ -705,6 +740,8 @@ political_decisions = {
 		effect = {
 			prestige = 5
 			inherit = SUL
+			SUL = { tech_school = unciv_tech_school }
+			set_country_flag = the_sulu_protectorate
 		}
 
 		ai_will_do = { factor = 1 }
@@ -812,6 +849,7 @@ political_decisions = {
 			set_global_flag = created_cambodian_protectorate
 			prestige = 10
 			inherit = CAM
+			CAM = { tech_school = unciv_tech_school }
 		}
 	}
 	
@@ -894,6 +932,7 @@ political_decisions = {
 					}
 				}
 				set_country_flag = annexed_to_FRA
+				tech_school = unciv_tech_school
 				annex_to = FRA
 			}
 		}
@@ -1063,8 +1102,8 @@ political_decisions = {
 				set_country_flag = Luangprabang
 				government = democracy
 				political_reform = landed_voting
-				civilized = yes
 				all_core = { remove_core = SIA }
+				tech_school = unciv_tech_school
 			}
 		}
 		ai_will_do = { factor = 1 }

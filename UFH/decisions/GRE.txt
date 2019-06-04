@@ -1,4 +1,26 @@
 political_decisions = {
+
+	make_crete_a_state = {
+		picture = hellenic_parliament
+		potential = {
+			owns = 847
+			owns = 848
+			capital_scope = { continent = europe }
+			847 = { is_colonial = yes }
+			civilized = yes
+		}
+	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			release = CRE
+			inherit = CRE
+		}
+		ai_will_do = { factor = 1 }
+	}
+
 	hellenic_parliament = {
 		picture = hellenic_parliament
 		potential = {
@@ -102,6 +124,7 @@ political_decisions = {
 				}
 				any_owned = { secede_province = THIS }
 				THIS = {
+					remove_accepted_culture = turkish
 					random_owned = {
 						limit = { province_id = 834 }
 						owner = { capital = 834 }
@@ -172,5 +195,5 @@ political_decisions = {
 				}
 			}
 		}
-	}	
+	}
 }

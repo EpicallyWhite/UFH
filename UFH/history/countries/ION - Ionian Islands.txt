@@ -2,9 +2,9 @@ capital = 826
 primary_culture = greek
 religion = orthodox
 government = presidential_dictatorship
-plurality = 20.0
+plurality = 10.0
 nationalvalue = nv_productivity
-literacy = 0.15
+literacy = 0.08
 civilized = yes
 prestige = 1
 
@@ -34,6 +34,8 @@ debt_law = peonage
 penal_system = capital_punishment
 child_labor = child_labor_legalcitizens_rights = primary_culture_only
 border_policy = open_borders
+
+set_country_flag = orthodox_country
 
 ruling_party = ION_conservative
 upper_house = {

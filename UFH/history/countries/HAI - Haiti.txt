@@ -36,6 +36,8 @@ penal_system = capital_punishment
 child_labor = child_labor_legalcitizens_rights = primary_culture_only
 border_policy = open_borders
 
+set_country_flag = catholic_country
+
 ruling_party = HAI_reactionary
 upper_house = {
 	fascist = 0
@@ -47,11 +49,14 @@ upper_house = {
 	communist = 0
 }
 
+schools = unciv_tech_school
+set_country_flag = new_world_nation
+
 # Technologies
-guild_based_production = 1
-enlightenment_thought = 1
 
 # Inventions
+#bottling_process = yes
+modern_winemaking = yes
 
 #Starting Consciousness
 consciousness = 2

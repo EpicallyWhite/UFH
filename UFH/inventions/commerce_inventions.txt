@@ -1682,6 +1682,30 @@ import_substitution_industrialization = {
 		activate_building = synthetic_oil_factory
 	}
 }
+
+#guild_based_production
+modern_winemaking = {
+	limit = {
+		guild_based_production = 1
+		OR = {
+			NOT = { 
+				has_country_flag = sunni_country 
+				has_country_flag = shiite_country 
+				has_country_flag = ibadi_country 
+			}
+			has_country_flag = secularized_muslim_society
+			has_country_flag = post_colonial_country
+		}
+	}
+	news = no
+	chance = {
+		base = 100
+	}
+	effect = {
+		activate_building = winery
+	}
+}
+
 #organized_factories
 work_classification = {
 	limit = { organized_factories = 1 }

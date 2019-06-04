@@ -45,10 +45,13 @@ upper_house = {
 	communist = 0
 }
 
+set_country_flag = protestant_country
 set_country_flag = theocratic_government
 
 
 # Inventions
+#bottling_process = yes
+modern_winemaking = yes
 
 # Starting Consciousness
 consciousness = 0

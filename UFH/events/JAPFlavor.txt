@@ -523,6 +523,7 @@ province_event = {
 			has_country_flag = sonno_joi
 			war = no
 		}
+		owner = { any_neighbor_country = { primary_culture = japanese } }
 		TKG = { exists = yes }
 		is_core = TKG
 		controlled_by = THIS
@@ -1706,7 +1707,7 @@ country_event = {
 			life_rating = 10
 			add_province_modifier = {
 				name = gateway_to_harbor
-				duration = -1
+				duration = 3650
 			}
 		}
 		ai_chance = {

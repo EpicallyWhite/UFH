@@ -1,6 +1,5 @@
 capital = 1789
 primary_culture = fulbe
-culture = african_minor
 religion = sunni
 government = theocracy
 plurality = 0.0
@@ -45,7 +44,7 @@ upper_house = {
 	communist = 0
 }
 
-set_country_flag = islamic_law
+set_country_flag = sunni_country
 
 # Technologies
 

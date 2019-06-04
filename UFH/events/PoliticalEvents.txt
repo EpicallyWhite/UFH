@@ -709,7 +709,7 @@ country_event = {
 	}
 }
 
-# Local Managment Conflict
+# Local Management Conflict
 country_event = {
 	id = 3502
 	title = "EVTNAME3502"
@@ -903,7 +903,7 @@ country_event = {
 	trigger = {
 		civilized = yes
 		public_meetings = no_meeting
-		plurality = 7
+		plurality = 40
 		NOT = {
 			average_militancy = 6
 		}
@@ -950,7 +950,7 @@ country_event = {
 	
 	trigger = {
 		public_meetings = yes_meeting
-		plurality = 4
+		plurality = 20
 		civilized = yes
 		has_pop_type = capitalists
 	}
@@ -1121,7 +1121,7 @@ country_event = {
 			ideology = liberal
 			value = 0.1
 		}
-		plurality = 1
+		plurality = 3
 	}
 	
 	option = {
@@ -1130,7 +1130,7 @@ country_event = {
 			ideology = conservative
 			value = 0.1
 		}
-		plurality = -1
+		plurality = -3
 	}
 }
 
@@ -1184,7 +1184,7 @@ country_event = {
 				}
 			}
 		}
-		plurality = 1
+		plurality = 3
 	}
 	
 	option = {
@@ -1202,7 +1202,7 @@ country_event = {
 				}
 			}
 		}
-		plurality = -1
+		plurality = -3
 	}
 }
 
@@ -1338,7 +1338,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB14100"
-		plurality = 2
+		plurality = 8
 	}
 }
 
@@ -1564,6 +1564,7 @@ country_event = {
 	
 	trigger = {
 		voting_system = first_past_the_post
+		NOT = { tag = ENG }
 		civilized = yes
 	}
 	
@@ -1576,7 +1577,7 @@ country_event = {
 		modifier = {
 			factor = 1.1
 			NOT = {
-				plurality = 8
+				plurality = 20
 			}
 		}
 	}
@@ -1589,7 +1590,7 @@ country_event = {
 				factor = 0.1
 			}
 		}
-		plurality = 1
+		plurality = 3
 	}
 	
 	option = {
@@ -1673,9 +1674,13 @@ country_event = {
 			political_reform_want = 0.45
 		}
 		modifier = {
+			factor = 0.25
+			tag = ENG
+		}
+		modifier = {
 			factor = 0.9
 			NOT = {
-				plurality = 3
+				plurality = 20
 			}
 		}
 		modifier = {
@@ -1695,6 +1700,10 @@ country_event = {
 			militancy = 2
 			consciousness = 1
 		}
+		ai_chance = {
+			factor = 50
+			modifier = { tag = ENG factor = 100 }
+		}
 	}
 	
 	option = {
@@ -1704,12 +1713,19 @@ country_event = {
 			militancy = 2
 			consciousness = 1
 		}
+		ai_chance = {
+			factor = 45
+			modifier = { tag = ENG factor = 100 }
+		}
 	}
 	
 	option = {
 		name = "EVTOPTC4202"
 		any_pop = {
 			militancy = 0.5
+		}
+		ai_chance = {
+			factor = 5
 		}
 	}
 }
@@ -3113,7 +3129,7 @@ country_event = {
 		NOT = {
 			poor_strata_life_needs = 0.9
 		}
-		canned_food = 15
+		canned_food = 5
 	}
 	
 	mean_time_to_happen = {
@@ -3162,7 +3178,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTC4419"
-		canned_food = -15
+		canned_food = -5
 	}
 }
 
@@ -3179,6 +3195,9 @@ country_event = {
 		war_policy = jingoism
 		prestige = 20
 		average_militancy = 6
+		any_neighbor_country = {
+			number_of_states = 2
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -3223,10 +3242,11 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB4420"
-		any_neighbor_country = {
+		random_country = {
+			limit = { neighbour = THIS number_of_states = 2 }
 			add_casus_belli = {
 				target = THIS
-				type = conquest
+				type = acquire_state
 				months = 12
 			}
 		}
@@ -3741,13 +3761,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 			}
 		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
-		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
 			casus_belli = { target = THIS type = humiliate months = 24 } 
@@ -3773,13 +3786,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 			}
 		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
-		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
 			casus_belli = { target = THIS type = humiliate months = 24 } 
@@ -3804,13 +3810,6 @@ country_event = {
 				25 = { reduce_pop = 0.5 }
 				25 = { reduce_pop = 0.4 }
 			}
-		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
 		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
@@ -3863,13 +3862,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 			}
 		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
-		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
 			casus_belli = { target = THIS type = humiliate months = 24 }
@@ -3895,13 +3887,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 			}
 		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
-		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
 			casus_belli = { target = THIS type = humiliate months = 24 }
@@ -3926,13 +3911,6 @@ country_event = {
 				25 = { reduce_pop = 0.5 }
 				25 = { reduce_pop = 0.4 }
 			}
-		}
-		any_pop = {
-			scaled_militancy = { ideology = socialist factor = 6 }
-			scaled_militancy = { ideology = liberal factor = 6 }
-			scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-			scaled_militancy = { ideology = fascist factor = -7 }
-			scaled_militancy = { ideology = reactionary factor = -2 }
 		}
 		any_country = {
 			limit = { NOT = { relation = { who = THIS value = 0 } } }
@@ -4013,14 +3991,11 @@ country_event = {
 				exists = yes
 				NOT = { tag = TUR }
 				OR = {
-					tag = ASY
-					tag = GRE
-					tag = ETH
-					capital_scope = { pop_majority_religion = protestant }
-					capital_scope = { pop_majority_religion = catholic }
-					capital_scope = { pop_majority_religion = orthodox }
-					capital_scope = { pop_majority_religion = coptic }
-					capital_scope = { pop_majority_religion = mormon }
+					has_country_flag = catholic_country
+					has_country_flag = protestant_country
+					has_country_flag = mormon_country
+					has_country_flag = orthodox_country
+					has_country_flag = coptic_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -4042,14 +4017,11 @@ country_event = {
 				exists = yes
 				NOT = { tag = TUR }
 				OR = {
-					tag = ASY
-					tag = GRE
-					tag = ETH
-					capital_scope = { pop_majority_religion = protestant }
-					capital_scope = { pop_majority_religion = catholic }
-					capital_scope = { pop_majority_religion = orthodox }
-					capital_scope = { pop_majority_religion = coptic }
-					capital_scope = { pop_majority_religion = mormon }
+					has_country_flag = catholic_country
+					has_country_flag = protestant_country
+					has_country_flag = mormon_country
+					has_country_flag = orthodox_country
+					has_country_flag = coptic_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -4071,14 +4043,11 @@ country_event = {
 				exists = yes
 				NOT = { tag = TUR }
 				OR = {
-					tag = ASY
-					tag = GRE
-					tag = ETH
-					capital_scope = { pop_majority_religion = protestant }
-					capital_scope = { pop_majority_religion = catholic }
-					capital_scope = { pop_majority_religion = orthodox }
-					capital_scope = { pop_majority_religion = coptic }
-					capital_scope = { pop_majority_religion = mormon }
+					has_country_flag = catholic_country
+					has_country_flag = protestant_country
+					has_country_flag = mormon_country
+					has_country_flag = orthodox_country
+					has_country_flag = coptic_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -4132,15 +4101,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = colonial_genocide_only
+			clr_country_flag = colonial_genocide_only
 			}
 		}
 		
@@ -4162,14 +4123,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = non_colonial_genocide_only
+			clr_country_flag = non_colonial_genocide_only
 			}
 		}
 	
@@ -4190,13 +4144,7 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -4221,13 +4169,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -4250,13 +4191,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -4277,13 +4211,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 			clr_country_flag = everywhere_genocide_only
 			}
@@ -4310,13 +4237,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -4337,13 +4257,6 @@ country_event = {
 					25 = { reduce_pop = 0.5 }
 					25 = { reduce_pop = 0.4 }
 				}
-			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
 			}
 			clr_country_flag = non_colonial_genocide_only
 			}
@@ -4366,13 +4279,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 			clr_country_flag = everywhere_genocide_only
 			}
@@ -4398,13 +4304,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -4425,13 +4324,6 @@ country_event = {
 					25 = { reduce_pop = 0.5 }
 					25 = { reduce_pop = 0.4 }
 				}
-			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
 			}
 			clr_country_flag = non_colonial_genocide_only
 			}
@@ -4454,13 +4346,7 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 			clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -4508,13 +4394,7 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
+			
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -4560,14 +4440,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -4610,14 +4482,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 			clr_country_flag = everywhere_genocide_only
 			}
@@ -4715,15 +4579,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = colonial_genocide_only
+			clr_country_flag = colonial_genocide_only
 			}
 		}
 		
@@ -4745,14 +4601,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = non_colonial_genocide_only
+			clr_country_flag = non_colonial_genocide_only
 			}
 		}
 	
@@ -4773,33 +4622,17 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 		
 		any_country = {
 			limit = {
-				OR = {
-					capital_scope = { pop_majority_religion = sunni }
-					tag = OMA
-				}
 				exists = yes
-				NOT = { tag = THIS }
-				NOT = { tag = ASY }
-				NOT = { is_culture_group = levantine }
-				NOT = { is_culture_group = pan_romanian }
-				NOT = { is_culture_group = jewish_cultures }
-				NOT = { primary_culture = serb }
-				NOT = { primary_culture = bulgarian }
-				NOT = { tag = PNJ }
-				NOT = { has_country_flag = yazidi_religion }
+				OR = {
+					has_country_flag = sunni_country
+					has_country_flag = ibadi_country
+				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
@@ -4828,15 +4661,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = colonial_genocide_only
+			clr_country_flag = colonial_genocide_only
 			}
 		}
 		
@@ -4858,13 +4683,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+			
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -4886,33 +4705,18 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 		
 		any_country = {
 			limit = {
-				OR = {
-					capital_scope = { pop_majority_religion = shiite }
-					tag = OMA
-				}
 				exists = yes
-				NOT = { tag = THIS }
-				NOT = { tag = ASY }
-				NOT = { tag = PNJ }
-				NOT = { is_culture_group = levantine }
-				NOT = { is_culture_group = pan_romanian }
-				NOT = { is_culture_group = jewish_cultures }
-				NOT = { primary_culture = serb }
-				NOT = { primary_culture = bulgarian }
-				NOT = { has_country_flag = yazidi_religion }
+				OR = {
+					has_country_flag = shiite_country
+					has_country_flag = ibadi_country
+				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
@@ -4942,13 +4746,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -4971,14 +4768,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = non_colonial_genocide_only
+			clr_country_flag = non_colonial_genocide_only
 			}
 		}
 	
@@ -4999,32 +4789,18 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 		
 		any_country = {
 			limit = {
+				exists = yes
 				OR = {
-					capital_scope = { pop_majority_religion = shiite }
-					capital_scope = { pop_majority_religion = sunni }
-					tag = OMA
+					has_country_flag = sunni_country
+					has_country_flag = shiite_country
+					has_country_flag = ibadi_country
 				}
-				NOT = { tag = ASY }
-				NOT = { is_culture_group = levantine }
-				NOT = { is_culture_group = pan_romanian }
-				NOT = { is_culture_group = jewish_cultures }
-				NOT = { primary_culture = serb }
-				NOT = { primary_culture = bulgarian }
-				NOT = { tag = PNJ }
-				NOT = { has_country_flag = yazidi_religion }
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
@@ -5037,29 +4813,21 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = colonial_genocide_only } }
 			owner = {
 		
-			any_owned = {
-				limit = { any_pop = { has_pop_religion = jewish is_state_religion = no } is_colonial = yes }
-				add_province_modifier = { name = genocide duration = 1825 }
-			}
-		
-			any_pop = {
-				limit = { has_pop_religion = jewish is_state_religion = no location = { is_colonial = yes } }
-				militancy = 4
-				consciousness = 3
-				random_list = {
-					25 = { reduce_pop = 0.7 }
-					25 = { reduce_pop = 0.6 }
-					25 = { reduce_pop = 0.5 }
-					25 = { reduce_pop = 0.4 }
+				any_owned = {
+					limit = { any_pop = { has_pop_religion = jewish is_state_religion = no } is_colonial = yes }
+					add_province_modifier = { name = genocide duration = 1825 }
 				}
-			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
+		
+				any_pop = {
+					limit = { has_pop_religion = jewish is_state_religion = no location = { is_colonial = yes } }
+					militancy = 4
+					consciousness = 3
+					random_list = {
+						25 = { reduce_pop = 0.7 }
+						25 = { reduce_pop = 0.6 }
+						25 = { reduce_pop = 0.5 }
+						25 = { reduce_pop = 0.4 }
+					}
 				}
 				clr_country_flag = colonial_genocide_only
 			}
@@ -5083,13 +4851,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5111,27 +4872,20 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 			
 		any_country = {
-			limit = { capital_scope = { pop_majority_religion = jewish } }
+			limit = { has_country_flag = jewish_country }
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
 		}
 		any_country = {
 			limit = {
 				is_greater_power = yes
-				NOT = { capital_scope = { pop_majority_religion = sunni } }
-				NOT = { capital_scope = { pop_majority_religion = shiite } }
+				NOT = { has_country_flag = sunni_country }
+				NOT = { has_country_flag = shiite_country }
 				OR = {
 					capital_scope = { continent = europe }
 					capital_scope = { continent = north_america }
@@ -5139,6 +4893,7 @@ country_event = {
 					capital_scope = { continent = australia_new_zealand }
 				}
 			}
+			relation = { who = THIS value = -100 }
 		}
 	}
 		
@@ -5183,13 +4938,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -5233,14 +4981,6 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5282,14 +5022,6 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 			clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -5297,17 +5029,10 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					capital_scope = { pop_majority_religion = sunni }
-					capital_scope = { pop_majority_religion = shiite }
-					capital_scope = { pop_majority_religion = jewish }
-					tag = OMA
+					has_country_flag = sunni_country
+					has_country_flag = shiite_country
+					has_country_flag = ibadi_country
 				}
-				NOT = { tag = ASY }
-				NOT = { is_culture_group = levantine }
-				NOT = { is_culture_group = pan_romanian }
-				NOT = { primary_culture = serb }
-				NOT = { primary_culture = bulgarian }
-				NOT = { tag = PNJ }
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
@@ -5315,7 +5040,7 @@ country_event = {
 		}
 	}
 	
-#Budhism - Choose the place
+#Buddhism - Choose the place
 country_event = {
 	
 	id = 443016
@@ -5342,12 +5067,12 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					tag = PNJ
-					capital_scope = { pop_majority_religion = sikh }
-					capital_scope = { pop_majority_religion = gelugpa }
-					capital_scope = { pop_majority_religion = theravada }
-					capital_scope = { pop_majority_religion = hindu }
-					capital_scope = { pop_majority_religion = mahayana }
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -5371,12 +5096,12 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					tag = PNJ
-					capital_scope = { pop_majority_religion = sikh }
-					capital_scope = { pop_majority_religion = gelugpa }
-					capital_scope = { pop_majority_religion = theravada }
-					capital_scope = { pop_majority_religion = hindu }
-					capital_scope = { pop_majority_religion = mahayana }
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -5400,12 +5125,12 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					tag = PNJ
-					capital_scope = { pop_majority_religion = sikh }
-					capital_scope = { pop_majority_religion = gelugpa }
-					capital_scope = { pop_majority_religion = theravada }
-					capital_scope = { pop_majority_religion = hindu }
-					capital_scope = { pop_majority_religion = mahayana }
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -5460,15 +5185,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = colonial_genocide_only
+			clr_country_flag = colonial_genocide_only
 			}
 		}
 		
@@ -5490,13 +5207,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5517,13 +5227,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 				clr_country_flag = everywhere_genocide_only
 			}
@@ -5551,14 +5254,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -5581,13 +5276,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5608,13 +5296,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 				clr_country_flag = everywhere_genocide_only
 			}
@@ -5642,14 +5323,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -5672,13 +5345,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5699,13 +5365,6 @@ country_event = {
 						25 = { reduce_pop = 0.5 }
 						25 = { reduce_pop = 0.4 }
 					}
-				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
 				}
 				clr_country_flag = everywhere_genocide_only
 			}
@@ -5733,42 +5392,27 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
-				clr_country_flag = colonial_genocide_only
+			clr_country_flag = colonial_genocide_only
 			}
 		}
 		
 		random_owned = { limit = { owner = { has_country_flag = non_colonial_genocide_only } }
 			owner = {
 			
-			any_owned = {
-				limit = { any_pop = { has_pop_religion = hindu is_state_religion = no } is_colonial = no }
-				add_province_modifier = { name = genocide duration = 1825 }
-			}
-			any_pop = {
-				limit = { has_pop_religion = hindu is_state_religion = no location = { is_colonial = no } }
-				militancy = 4
-				consciousness = 3
-				random_list = {
-					25 = { reduce_pop = 0.7 }
-					25 = { reduce_pop = 0.6 }
-					25 = { reduce_pop = 0.5 }
-					25 = { reduce_pop = 0.4 }
+				any_owned = {
+					limit = { any_pop = { has_pop_religion = hindu is_state_religion = no } is_colonial = no }
+					add_province_modifier = { name = genocide duration = 1825 }
 				}
-			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
+				any_pop = {
+					limit = { has_pop_religion = hindu is_state_religion = no location = { is_colonial = no } }
+					militancy = 4
+					consciousness = 3
+					random_list = {
+						25 = { reduce_pop = 0.7 }
+						25 = { reduce_pop = 0.6 }
+						25 = { reduce_pop = 0.5 }
+						25 = { reduce_pop = 0.4 }
+					}
 				}
 				clr_country_flag = non_colonial_genocide_only
 			}
@@ -5791,13 +5435,7 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -5843,13 +5481,7 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
+			
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -5894,13 +5526,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -5943,13 +5568,6 @@ country_event = {
 					}
 				}
 				
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 			clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -6045,13 +5663,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -6074,13 +5685,6 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -6102,19 +5706,22 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 		
 		any_country = {
-			limit = { capital_scope = { pop_majority_religion = shinto } }
+			limit = {
+				OR = {
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
+				}
+			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
 			relation = { who = THIS value = -400 }
 		}
@@ -6142,13 +5749,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -6171,13 +5771,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+			
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -6199,24 +5793,20 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 		
 		any_country = {
-		limit = {
-			OR = {
-				capital_scope = { pop_majority_religion = mahayana }
-				capital_scope = { pop_majority_religion = gelugpa }
-				capital_scope = { pop_majority_religion = theravada }
-				capital_scope = { pop_majority_religion = hindu }
+			limit = {
+				OR = {
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
@@ -6246,13 +5836,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -6275,13 +5858,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+			
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -6303,13 +5880,7 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -6337,13 +5908,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 				clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -6366,13 +5930,7 @@ country_event = {
 					25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+			
 				clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -6394,20 +5952,14 @@ country_event = {
 						25 = { reduce_pop = 0.4 }
 					}
 				}
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
+				
 				clr_country_flag = everywhere_genocide_only
 			}
 		}
 	}
 		
 	option = {
-		name = "EVT443017OPTE" #Everyone
+		name = "EVT443021OPTE" #Everyone
 		random_owned = { limit = { owner = { has_country_flag = colonial_genocide_only } }
 			owner = {
 		
@@ -6446,13 +5998,7 @@ country_event = {
 				25 = { reduce_pop = 0.4 }
 				}
 			}
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
+			
 			clr_country_flag = colonial_genocide_only
 			}
 		}
@@ -6497,13 +6043,6 @@ country_event = {
 				}
 			}
 			
-			any_pop = {
-				scaled_militancy = { ideology = socialist factor = 6 }
-				scaled_militancy = { ideology = liberal factor = 6 }
-				scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-				scaled_militancy = { ideology = fascist factor = -7 }
-				scaled_militancy = { ideology = reactionary factor = -2 }
-			}
 			clr_country_flag = non_colonial_genocide_only
 			}
 		}
@@ -6546,13 +6085,6 @@ country_event = {
 					}
 				}
 				
-				any_pop = {
-					scaled_militancy = { ideology = socialist factor = 6 }
-					scaled_militancy = { ideology = liberal factor = 6 }
-					scaled_militancy = { ideology = anarcho_liberal factor = 7 }
-					scaled_militancy = { ideology = fascist factor = -7 }
-					scaled_militancy = { ideology = reactionary factor = -2 }
-				}
 			clr_country_flag = everywhere_genocide_only
 			}
 		}
@@ -6560,10 +6092,12 @@ country_event = {
 		any_country = {
 			limit = {
 				OR = {
-					capital_scope = { pop_majority_religion = shinto }
-					capital_scope = { pop_majority_religion = mahayana }
-					capital_scope = { pop_majority_religion = gelugpa }
-					capital_scope = { pop_majority_religion = theravada }
+					has_country_flag = mahayana_country
+					has_country_flag = gelugpa_country
+					has_country_flag = theravada_country
+					has_country_flag = hindu_country
+					has_country_flag = shinto_country
+					has_country_flag = sikh_country
 				}
 			}
 			casus_belli = { target = THIS type = cut_down_to_size months = 60 }
