@@ -1,0 +1,28 @@
+political_decisions = {
+	kill_niggers = {
+		id = 14881488
+		picture = build_kiel_canal
+	
+		potential = {
+			state_n_government = 1
+			prestige = 1
+		}
+	
+		allow = {
+			war = no
+			NOT = { government = democracy }
+			money = 500000
+	    }
+		
+		effect = { 
+		badboy = 5 
+		any_owned = limit = { culture = nigger } any_pop = { limit = { culture = nigger } reduce_pop = 0.80 } 
+		treasury = -500000
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

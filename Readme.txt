@@ -1,0 +1,3 @@
+This is an EPIC mod that allows you to press a decision which kills 20.0% of the NIGGERS in your GrossGermaniums...
+Requires the mod that makes all African cultures into nigger.
+Here's the link to it:https://github.com/v2anon/UFH/tree/NiggerCultureMod
